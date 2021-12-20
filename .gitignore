@@ -3,6 +3,8 @@
 checkpoint
 *.mid
 *.hdf5
+*.wav
+Touhou.sf2
 
 piano_model
 piano_model_weights*
