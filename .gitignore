@@ -1,6 +1,8 @@
+.DS_Store
+*/.ipynb_checkpoints/*
+checkpoint
+
 piano_model
 piano_model_weights*
-checkpoint
-.ipynb_checkpoints
 
 
