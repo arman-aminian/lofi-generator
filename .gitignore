@@ -6,6 +6,7 @@ checkpoint
 *.wav
 Touhou.sf2
 __pycache__
+*.npy
 
 piano_model
 piano_model_weights*
