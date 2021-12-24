@@ -5,6 +5,7 @@ checkpoint
 *.midi
 models
 *.hdf5
+*.mp3
 *.wav
 Touhou.sf2
 __pycache__
