@@ -1,2 +1,2 @@
-Lo-Fi Generator using deep learning.
+Lo-Fi Generator using deep-learning methods.
 
