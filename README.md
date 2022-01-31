@@ -1,4 +1,4 @@
-Lo-Fi Generator using deep-learning methods.
+# Lo-Fi Generator using deep-learning methods.
 
 ## Final models
 Drums line model: LSTM based model.</br>
