@@ -2,6 +2,7 @@ import os
 
 import glob
 import pickle
+import random
 import numpy
 import pandas
 import numpy as np
@@ -529,13 +530,35 @@ def mix_lines(drums_line, piano_line, noise_line, vocal_line, music_len=60):
     
     return music
 
+noise_list = [
+    'Storm.mp3',
+    'dryer.mp3',
+    'Ocean.mp3',
+    'rain.mp3',
+    'Rain2.mp3',
+    'Train.mp3',
+    'Waves.mp3',
+    'White-Noise.mp3'
+]
+
+vocal_list = [
+    "say-hello-to-my-little-friend!.mp3",
+    "you-need-people-like-me-so-you-can-point-your-fucking-fingers-and-say-that's-the-bad-guy.mp3",
+    "you-spend-time-with-your-family.mp3",
+    "i-need-you-to-go-into-your-bedroom-right-now-and-grab-anything-thats-important-you-understand-go-now-both-of-you-go.mp3",
+    "i'm-only-laughing-on-the-outside-my-smile-is-just-skin-deep-if-you-could-see-inside-i'm-really-crying-you-might-join-me-for-a-weep.mp3",
+    "jack-jack-is-dead-my-friend-you-can-call-me-joker-and-as-you-can-see-i'm-a-lot-happier.mp3",
+    "tell-me-something-my-friend-you-ever-dance-with-the-devil-in-the-pale-moonlight.mp3"
+]
 
 def main():
     generate_lines()
     drums_line = AudioSegment.from_wav('drums_line.wav')
     piano_line = AudioSegment.from_wav('piano_roll.wav')
-    noise_line = AudioSegment.from_mp3(NOISES_FOLDER_PATH + 'Storm.mp3')
-    vocal_line = AudioSegment.from_mp3(VOCALS_FOLDER_PATH + "say-hello-to-my-little-friend!.mp3")
+    noise_name = random.choice(noise_list)
+    vocal_name = random.choice(vocal_list)
+    noise_line = AudioSegment.from_mp3(NOISES_FOLDER_PATH + noise_name)
+    vocal_line = AudioSegment.from_mp3(VOCALS_FOLDER_PATH + vocal_name)
     music = mix_lines(
         (drums_line - 8) * 2,
         (piano_line - 5) * 3,
@@ -543,7 +566,7 @@ def main():
         vocal_line - 14,
         music_len=75
     )
-    music.export('generated_music_sample_test.wav', format='wav')
+    music.export('generated_music_' + noise_name + '_' + vocal_name[:8] + '.wav', format='wav')
 
 if __name__ == '__main__':
     main()
