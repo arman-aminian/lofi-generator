@@ -532,12 +532,10 @@ def mix_lines(drums_line, piano_line, noise_line, vocal_line, music_len=60):
 
 def main():
     generate_lines()
-    print('here1')
     drums_line = AudioSegment.from_wav('drums_line.wav')
     piano_line = AudioSegment.from_wav('piano_roll.wav')
     noise_line = AudioSegment.from_mp3(NOISES_FOLDER_PATH + 'Storm.mp3')
     vocal_line = AudioSegment.from_mp3(VOCALS_FOLDER_PATH + "say-hello-to-my-little-friend!.mp3")
-    print('here2')
     music = mix_lines(
         (drums_line - 8) * 2,
         (piano_line - 5) * 3,
@@ -545,7 +543,6 @@ def main():
         vocal_line - 14,
         music_len=75
     )
-    print('here3')
     music.export('generated_music_sample_test.wav', format='wav')
 
 if __name__ == '__main__':
