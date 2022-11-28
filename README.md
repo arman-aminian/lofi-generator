@@ -7,7 +7,7 @@ Piano roll model: Variational-Autoencoder model.
 ## Presentaion slides
 https://docs.google.com/presentation/d/1vmBDqgroNriB8eKM3JJqfl4Iq-t68spLxWECeSrEFQ0/edit?usp=sharing
 
-## Presentaion video
+## Presentaion video (in Persian)
 https://www.aparat.com/v/UwtMO
 
 ## Usage
